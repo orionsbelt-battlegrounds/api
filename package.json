@@ -18,7 +18,8 @@
     "obb-battle-engine": "0.0.3",
     "obb-achievements": "*",
     "underscore": "*",
-    "restify": "~2.6.3"
+    "restify": "~2.6.3",
+    "newrelic": "~1.3.2"
   },
   "devDependencies": {
     "mocha": "*",

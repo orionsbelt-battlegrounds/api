@@ -1,4 +1,6 @@
 
+require('newrelic');
+
 var package = require('./package.json');
 var restify = require('restify');
 
