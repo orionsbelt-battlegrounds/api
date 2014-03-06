@@ -9,7 +9,7 @@ server.use(restify.bodyParser());
 require('./src/routes/index.js')(server);
 require('./src/routes/units.js')(server);
 
-server.listen(3000, function () {
+server.listen(process.env.OBB_API_PORT || 3000, function () {
  console.log('%s listening at %s', server.name, server.url)
 });
 
