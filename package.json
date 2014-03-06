@@ -1,0 +1,28 @@
+{
+  "name": "obb-api",
+  "version": "0.0.1",
+  "main": "./server.js",
+  "private": false,
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive --reporter spec --check-leaks",
+    "browserify": "./node_modules/.bin/browserify ./obb.js -r ./obb.js --standalone obb -o dist/obb-engine.js",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --recursive && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orionsbelt-battlegrounds/api.git"
+  },
+  "dependencies": {
+    "obb-elo": "*",
+    "obb-battle-engine": "*",
+    "obb-achievements": "*",
+    "underscore": "*",
+    "restify": "~2.6.3"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*",
+    "istanbul": "*",
+    "mocha-lcov-reporter": "*"
+  }
+}
