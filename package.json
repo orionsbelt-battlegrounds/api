@@ -5,8 +5,8 @@
   "private": false,
   "scripts": {
     "test": "./node_modules/.bin/mocha --recursive --reporter spec --check-leaks",
-    "server": "node server.js",
-    "server-background": "node server.js &",
+    "start": "node server.js",
+    "start-background": "node server.js &",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --recursive && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
