@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "obb-elo": "*",
-    "obb-battle-engine": "0.0.4",
+    "obb-battle-engine": "0.0.5",
     "obb-achievements": "*",
     "underscore": "*",
     "restify": "~2.6.3",
