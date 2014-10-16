@@ -15,17 +15,14 @@ describe("routes", function() {
 
   describe("units", function() {
 
-    function assertUnit(unit, data) {
-      assert.equal(data.name, unit.name);
-      assert(_.contains(movementTypes, data.movementType), "Can't resolve movement type '"+data.movementType+"'");
+    function assertUnit(data) {
+      assert((typeof data.name) == "string");
     }
 
     it("/units is ok", function(next) {
       client.get('/units', function(err, req, res, data) {
-        assert.equal(data.length, units.length);
         _.each(data, function process(unitData) {
-          var unit = obbBattleEngine.units[unitData.name];
-          assertUnit(unit, unitData);
+          assertUnit(unitData);
         });
         next();
       })
@@ -38,16 +35,13 @@ describe("routes", function() {
       })
     })
 
-    _.each(units, function process(unit) {
-      var unitPath = "/units/" + unit.name;
-      it(unitPath + " is ok", function(next) {
-        client.get(unitPath, function(err, req, res, data) {
-          assertUnit(unit, data);
-          next();
-        })
+
+    it("provides specific unit data", function(next) {
+      client.get('/units/rain', function(err, req, res, data) {
+        assertUnit(data);
+        next();
       })
     })
-
   })
 
 })
