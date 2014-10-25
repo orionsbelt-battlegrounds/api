@@ -8,7 +8,6 @@ function generateRandom(args) {
       game : JSON.parse(res.body)
     }));
   });
-
 }
 
 module.exports = {
