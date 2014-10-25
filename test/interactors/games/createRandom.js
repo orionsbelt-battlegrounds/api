@@ -8,7 +8,9 @@ describe("games: createRandom", function() {
     createRandom.run({
       token : "donbonifacio",
       callback : function(result) {
-        assert(result.success == true);
+        assert(result.success == true, JSON.stringify(result));
+        assert(result.data.player1, JSON.stringify(result));
+        assert(result.data.player2, JSON.stringify(result));
         next();
       }
     });
