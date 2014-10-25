@@ -6,4 +6,5 @@ before_script:
   - npm run start-background
 script:
   - npm test
-
+services:
+    - mongodb
