@@ -17,6 +17,7 @@
     "obb-elo": "*",
     "obb-battle-engine": "0.0.5",
     "obb-achievements": "*",
+    "mongodb": "~2.0",
     "underscore": "*",
     "restify": "~2.6.3",
     "newrelic": "~1.3.2"
